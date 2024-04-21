@@ -1,56 +1,56 @@
 {
-	"name": "vscode-splunk-search-linter",
-	"displayName": "Splunk Search Autocompletion Tool",
-	"description": "Splunk Search suggestions for Splunk SPL Files",
-	"version": "0.5.0",
-	"publisher": "arcsector",
-	"engines": {
-		"vscode": "^1.41.0"
-	},
-	"categories": [
-		"Programming Languages",
-		"Formatters"
-	],
-	"activationEvents": [
-		"onLanguage:splunk_search"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/arcsector/vscode-splunk-search-linter.git"
-	},
-	"icon": "assets/icon.png",
-	"galleryBanner": {
-		"color": "#1e1e1e",
-		"theme": "dark"
-	},
-	"contributes": {
-		"commands": [
-			{
-				"command": "splunk_search.Prettify",
-				"title": "Format SPL"
-			}
-		]
-	},
-	"main": "./out/src/extension.js",
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile",
-		"test": "node ./out/test/runTest.js"
-	},
-	"extensionDependencies": [
-		"arcsector.vscode-splunk-search-syntax"
-	],
-	"devDependencies": {
-		"@types/glob": "^7.1.1",
-		"@types/mocha": "^5.2.7",
-		"@types/node": "^12.11.7",
-		"@types/vscode": "^1.41.0",
-		"glob": "^7.1.5",
-		"mocha": "^6.2.2",
-		"tslint": "^5.20.1",
-		"typescript": "^3.6.4",
-		"vscode-test": "^1.2.2"
-	}
+  "name": "vscode-rizhiyi-search-linter",
+  "displayName": "Rizhiyi Search Autocompletion Tool",
+  "description": "Rizhiyi Search suggestions for rizhiyi SPL Files",
+  "version": "0.1.0",
+  "publisher": "ale10bb",
+  "engines": {
+    "vscode": "^1.88.1"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters"
+  ],
+  "activationEvents": [
+    "onLanguage:rizhiyi_search"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ale10bb/vscode-rizhiyi-search-linter.git"
+  },
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "rizhiyi_search.Prettify",
+        "title": "Format SPL"
+      }
+    ]
+  },
+  "main": "./out/src/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "extensionDependencies": [
+    "ale10bb.vscode-rizhiyi-search-syntax"
+  ],
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.41.0",
+    "glob": "^7.1.5",
+    "mocha": "^6.2.2",
+    "tslint": "^5.20.1",
+    "typescript": "^3.6.4",
+    "vscode-test": "^1.2.2"
+  }
 }
