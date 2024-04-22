@@ -58,7 +58,7 @@ export function returnCompletionItemfromJSON(context: vscode.ExtensionContext, f
                 docString = docString + "\n#### Required Arguments:";
                 // Loop through params and create docstring
                 for (const i in requiredParams) {
-                    docString = docString + "\n_@param_ `" + i + "` -- " + requiredParams[i] + "\n";
+                    docString = docString + "\n_@param_ `" + i + "` -- " + requiredParams[i].replaceAll("<", "&lt;").replaceAll(">", "&gt;") + "\n";
                 }
             }
 
@@ -66,7 +66,7 @@ export function returnCompletionItemfromJSON(context: vscode.ExtensionContext, f
                 docString = docString + "\n#### Optional Arguments: \n";
                 // Loop through params and create docstring
                 for (const i in optionalParams) {
-                    docString = docString + "\n_@param_ `" + i + "` -- " + optionalParams[i] + "\n";
+                    docString = docString + "\n_@param_ `" + i + "` -- " + optionalParams[i].replaceAll("<", "&lt;").replaceAll(">", "&gt;") + "\n";
                 }
             }
         }
@@ -91,7 +91,7 @@ export function returnCompletionItemfromJSON(context: vscode.ExtensionContext, f
         splunkCompletionItem.documentation = documentation;
 
         let splunkHoverItem = new vscode.Hover(entry[name]);
-        splunkHoverItem.contents = [new vscode.MarkdownString(detail), documentation];
+        splunkHoverItem.contents = [new vscode.MarkdownString(detail.replaceAll("<", "&lt;").replaceAll(">", "&gt;")), documentation];
         completionArray.push(splunkCompletionItem);
         //hoverArray.push(splunkHoverItem);
         hoverDict[entry[name]] = splunkHoverItem;
