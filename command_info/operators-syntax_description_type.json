@@ -1,26 +1,26 @@
 [
-    {
-        "Command_Name": "AS",
-        "Description": "Keyword for renaming data columns. Usually used with transforming commands such as stats, chart, and rename.",
-        "Supported functions and syntax": "stats count [column_old] AS [column_new]",
-        "Type of function": "Keyword"
-    },
-    {
-        "Command_Name": "BY",
-        "Description": "Keyword for spliting data columns per distinct value. Usually used with transforming commands such as stats and chart.",
-        "Supported functions and syntax": "stats count [column_X] BY [column_Y]",
-        "Type of function": "Keyword"
-    },
-    {
-        "Command_Name": "OVER",
-        "Description": "Keyword for spliting data columns per distinct value in conjunction with other keywords. Usually used with transforming commands such as chart.",
-        "Supported functions and syntax": "chart count [column_X] OVER [column_Y] BY [column_Z]",
-        "Type of function": "Keyword"
-    },
-    {
-        "Command_Name": "WHERE",
-        "Description": "Keyword for spliting data columns per distinct value in conjunction with other keywords. Usually used with transforming commands such as chart.",
-        "Supported functions and syntax": "chart count [column_X] WHERE [column_Y]",
-        "Type of function": "Keyword"
-    }
+  {
+    "Command_Name": "as",
+    "Description": "用于重命名数据列的关键字。通常与stats、chart和rename等转换命令一起使用。",
+    "Supported functions and syntax": "rename [column_old] as [column_new]",
+    "Type of function": "Keyword"
+  },
+  {
+    "Command_Name": "by",
+    "Description": "用于根据不同值拆分数据列的关键字。通常与stats和chart等转换命令一起使用。",
+    "Supported functions and syntax": "stats count([column_X]) by [column_Y]",
+    "Type of function": "Keyword"
+  },
+  {
+    "Command_Name": "over",
+    "Description": "用于与其他关键字结合使用的每个不同值拆分数据列的关键字。通常与chart等转换命令一起使用。",
+    "Supported functions and syntax": "chart count([column_X]) over [column_Y] by [column_Z]",
+    "Type of function": "Keyword"
+  },
+  {
+    "Command_Name": "where",
+    "Description": "用于与其他关键字结合使用的每个不同值拆分数据列的关键字。 通常与timechart等转换命令一起使用。”",
+    "Supported functions and syntax": "timechart count([column_X]) by [column_Y] where <expression>",
+    "Type of function": "Keyword"
+  }
 ]
