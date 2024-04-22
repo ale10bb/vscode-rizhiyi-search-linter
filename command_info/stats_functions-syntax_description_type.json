@@ -1,188 +1,170 @@
 [
-    {
-        "Command_Name": "avg", 
-        "Description": "Returns the average of the values in the field X.", 
-        "Supported functions and syntax": "avg(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "count", 
-        "Description": "Returns the number of occurrences where the field that you specify contains any value (is not empty. You can also count the occurrences of a specific value in the field by using the eval command with the count function. For example: count eval(field_name=\"value\").", 
-        "Supported functions and syntax": "count(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "distinct_count", 
-        "Description": "Returns the count of distinct values in the field X.", 
-        "Supported functions and syntax": "distinct_count(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "estdc", 
-        "Description": "Returns the estimated count of the distinct values in the field X.", 
-        "Supported functions and syntax": "estdc(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "estdc_error", 
-        "Description": "Returns the theoretical error of the estimated count of the distinct values in the field X. The error represents a ratio of the absolute_value(estimate_distinct_count - real_distinct_count)/real_distinct_count.", 
-        "Supported functions and syntax": "estdc_error(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "max", 
-        "Description": "Returns the maximum value of the field X. If the values of X are non-numeric, the maximum value is found using lexicographical ordering. This function processes field values as numbers if possible, otherwise processes field values as strings.", 
-        "Supported functions and syntax": "max(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "mean", 
-        "Description": "Returns the arithmetic mean of the field X.", 
-        "Supported functions and syntax": "mean(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "median", 
-        "Description": "Returns the middle-most value of the field X.", 
-        "Supported functions and syntax": "median(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "min", 
-        "Description": "Returns the minimum value of the field X. If the values of X are non-numeric, the minimum value is found using lexicographical ordering.", 
-        "Supported functions and syntax": "min(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "mode", 
-        "Description": "Returns the most frequent value of the field X.", 
-        "Supported functions and syntax": "mode(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "percentile", 
-        "Description": "Returns the X-th percentile value of the numeric field Y. Valid values of X are integers from 1 to 99.", 
-        "Supported functions and syntax": "percentile<X>(Y)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "range", 
-        "Description": "Returns the difference between the maximum and minimum values of the field X ONLY IF the values of X are numeric.", 
-        "Supported functions and syntax": "range(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "stdev", 
-        "Description": "Returns the sample standard deviation of the field X.", 
-        "Supported functions and syntax": "stdev(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "stdevp", 
-        "Description": "Returns the population standard deviation of the field X.", 
-        "Supported functions and syntax": "stdevp(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "sum", 
-        "Description": "Returns the sum of the values of the field X.", 
-        "Supported functions and syntax": "sum(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "sumsq", 
-        "Description": "Returns the sum of the squares of the values of the field X.", 
-        "Supported functions and syntax": "sumsq(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "var", 
-        "Description": "Returns the sample variance of the field X.", 
-        "Supported functions and syntax": "var(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "varp", 
-        "Description": "Returns the population variance of the field X.", 
-        "Supported functions and syntax": "varp(X)", 
-        "Type of function": "Aggregate functions"
-    }, 
-    {
-        "Command_Name": "first", 
-        "Description": "Returns the first seen value of the field X. In general, the first seen value of the field is the most recent instance of this field, relative to the input order of events into the stats command.", 
-        "Supported functions and syntax": "first(X)", 
-        "Type of function": "Event order functions"
-    }, 
-    {
-        "Command_Name": "last", 
-        "Description": "Returns the last seen value of the field X. In general, the last seen value of the field is the oldest instance of this field relative to the input order of events into the stats command.", 
-        "Supported functions and syntax": "last(X)", 
-        "Type of function": "Event order functions"
-    }, 
-    {
-        "Command_Name": "list", 
-        "Description": "Returns a list of up to 100 values of the field X as a multivalue entry. The order of the values reflects the order of input events.", 
-        "Supported functions and syntax": "list(X)", 
-        "Type of function": "Multivalue stats and chart functions"
-    }, 
-    {
-        "Command_Name": "values", 
-        "Description": "Returns the list of all distinct values of the field X as a multivalue entry. The order of the values is lexicographical.", 
-        "Supported functions and syntax": "values(X)", 
-        "Type of function": "Multivalue stats and chart functions"
-    }, 
-    {
-        "Command_Name": "earliest", 
-        "Description": "Returns the chronologically earliest (oldest) seen occurrence of a value of a field X.", 
-        "Supported functions and syntax": "earliest(X)", 
-        "Type of function": "Time functions"
-    }, 
-    {
-        "Command_Name": "earliest_time", 
-        "Description": "Returns the UNIX time of the earliest (oldest) occurrence of a value of the field. Used in conjunction with earliest(x), latest(x), and latest_time(x) to calculate the rate of increase for an accumulating counter.", 
-        "Supported functions and syntax": "earliest_time(X)", 
-        "Type of function": "Time functions"
-    }, 
-    {
-        "Command_Name": "latest", 
-        "Description": "Returns the chronologically latest (most recent) seen occurrence of a value of a field X.", 
-        "Supported functions and syntax": "latest(X)", 
-        "Type of function": "Time functions"
-    }, 
-    {
-        "Command_Name": "latest_time", 
-        "Description": "Returns the UNIX time of the latest (most recent) occurrence of a value of the field. Used in conjunction with earliest(x), earliest_time(x), and latest(x) to calculate the rate of increase for an accumulating counter.", 
-        "Supported functions and syntax": "latest_time(X)", 
-        "Type of function": "Time functions"
-    }, 
-    {
-        "Command_Name": "per_day", 
-        "Description": "Returns the values of field X, or eval expression X, for each day.", 
-        "Supported functions and syntax": "per_day(X)", 
-        "Type of function": "Time functions"
-    }, 
-    {
-        "Command_Name": "per_hour", 
-        "Description": "Returns the values of field X, or eval expression X, for each hour.", 
-        "Supported functions and syntax": "per_hour(X)", 
-        "Type of function": "Time functions"
-    }, 
-    {
-        "Command_Name": "per_minute", 
-        "Description": "Returns the values of field X, or eval expression X, for each minute.", 
-        "Supported functions and syntax": "per_minute(X)", 
-        "Type of function": "Time functions"
-    }, 
-    {
-        "Command_Name": "per_second", 
-        "Description": "Returns the values of field X, or eval expression X, for each second.", 
-        "Supported functions and syntax": "per_second(X)", 
-        "Type of function": "Time functions"
-    }, 
-    {
-        "Command_Name": "rate", 
-        "Description": "Returns the per-second rate change of the value of the field. Represents (latest(X) - earliest(X)) / (latest_time(X) - earliest_time(X)) Requires the earliest(X) and latest(X) values of the field to be numerical, and the earliest_time(X) and latest_time(X) values to be different.", 
-        "Supported functions and syntax": "rate(X)", 
-        "Type of function": "Time functions"
-    }
+  {
+    "Command_Name": "avg",
+    "Description": "返回字段X的平均值",
+    "Supported functions and syntax": "avg(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "count",
+    "Description": "返回字段X的出现次数",
+    "Supported functions and syntax": "count(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "date_histogram",
+    "Description": "时间直方图统计，可以认为是直方图统计的一种特殊形式",
+    "Supported functions and syntax": "date_histogram(X, INTERVAL) / dhg(X, INTERVAL)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "dhg",
+    "Description": "时间直方图统计，可以认为是直方图统计的一种特殊形式",
+    "Supported functions and syntax": "date_histogram(X, INTERVAL) / dhg(X, INTERVAL)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "distinct",
+    "Description": "返回字段X的值去重后的的个数的精准值",
+    "Supported functions and syntax": "distinct(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "distinct_count",
+    "Description": "返回字段X的值去重后的个数的估计值",
+    "Supported functions and syntax": "distinct_count(X) / estdc(X) / dc(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "earliest",
+    "Description": "返回字段X按照时间增序排序后的第一个值",
+    "Supported functions and syntax": "earliest(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "extend_stat",
+    "Description": "返回字段X的es扩展统计。\nes将返回多个值，将返回如下字段：\n_es.X.count\n_es.X.min\n_es.X.max\n_es.X.avg\n_es.X.sum\n_es.X.sum_of_squares\n_es.X.variance\n_es.X.std_deviation +",
+    "Supported functions and syntax": "extend_stat(X) / es(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "first",
+    "Description": "返回数据中字段X的第一个出现的值",
+    "Supported functions and syntax": "first(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "histogram",
+    "Description": "直方图统计。字段X必须为整数类型",
+    "Supported functions and syntax": "histogram(X) / hg(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "last",
+    "Description": "返回字段X的最后一个出现的值",
+    "Supported functions and syntax": "last(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "latest",
+    "Description": "返回字段X按照时间增序排序后的最后一个值",
+    "Supported functions and syntax": "latest(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "list",
+    "Description": "将字段X的值组合成列表返回。LIMIT为值列表中值的个数上限，默认值为100",
+    "Supported functions and syntax": "list(X,[LIMIT])",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "mad",
+    "Description": "此函数将统计指定字段的绝对中位差(MAD)值",
+    "Supported functions and syntax": "mad(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "max",
+    "Description": "返回字段X的最大值。字段X必须为数值类型",
+    "Supported functions and syntax": "max(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "min",
+    "Description": "返回字段X的最小值。字段X必须为数值类型",
+    "Supported functions and syntax": "min(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "percentiles",
+    "Description": "返回字段X的值排序后，百分位Y1, Y2所对应的字段值。\npct将返回多个值，字段命名方式如下：\nY1对应的字段为_pct.X.Y1\nY2对应的字段为_pct.X.Y2\n...",
+    "Supported functions and syntax": "percentiles(X, Y1, Y2...) / pct(X, Y1, Y2...)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "percentile_ranks",
+    "Description": "返回字段X的值排序后，百分位Y1, Y2所对应的字段值。\npct将返回多个值，字段命名方式如下：\nY1对应的字段为_pct.X.Y1\nY2对应的字段为_pct.X.Y2\n...​...​",
+    "Supported functions and syntax": "percentile_ranks(X, Y1, Y2...) / pct_ranks(X, Y1, Y2...)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "range_bucket",
+    "Description": "X：为数值类型\nRANGE_BUCKET：统计区间，表示为(start, end)。可以设置多个。​",
+    "Supported functions and syntax": "range_bucket(RANGE_BUCKET, RANGE_BUCKET...) / rb(RANGE_BUCKET, RANGE_BUCKET...)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "rate",
+    "Description": "此函数将统计在指定时间跨度内指定字段值的变化速率。\n具体计算方法：(latest - earliest) / (latestT - earliestT)\nlatest为字段X按照时间增序排序后的最后一个值\nearliest为字段X按照时间增序排序后的第一个值\nlatestT为latest对应的timestamp\nearliestT为earliest对应的timestamp",
+    "Supported functions and syntax": "rate(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "sparkline",
+    "Description": "按照指定区间分桶，通过面积图展示每个分桶内统计数据。\nagg：部分与stats有关的函数，支持所有的single函数",
+    "Supported functions and syntax": "sparkline(agg(X), INTERVAL)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "stddev",
+    "Description": "统计字段X的标准差\n字段X必须为数值类型",
+    "Supported functions and syntax": "stddev(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "sum",
+    "Description": "返回字段X的值的和\n字段X必须为数值类型",
+    "Supported functions and syntax": "sum(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "sumsq",
+    "Description": "统计字段X的平方和\n字段X必须为数值类型",
+    "Supported functions and syntax": "sumsq(X)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "signify",
+    "Description": "返回指定字段中有趣或不寻常的字段值的集合，并按照重要性排序。 字段值的重要性取决于score的大小。",
+    "Supported functions and syntax": "signify(X,[LIMIT])",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "top",
+    "Description": "此函数统计字段X内最多出现的若干个值 +",
+    "Supported functions and syntax": "top(X, LIMIT)",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "values",
+    "Description": "返回字段X去重后的值。\nLIMIT默认值为100",
+    "Supported functions and syntax": "values(X,[LIMIT])",
+    "Type of function": "聚合函数"
+  },
+  {
+    "Command_Name": "var",
+    "Description": "统计字段X的方差\n字段X必须为数值类型",
+    "Supported functions and syntax": "var(X)",
+    "Type of function": "聚合函数"
+  }
 ]
